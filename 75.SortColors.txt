@@ -1,0 +1,26 @@
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+       int n=nums.size();
+       int zero=0,one=0,two=0;
+       for(int i=0;i<n;i++)
+       {
+           if(nums[i]==0) zero++;
+           if(nums[i]==1) one++;
+           if(nums[i]==2) two++;
+       } 
+       for(int j=0;j<n;j++)
+       {
+           if(j<zero)
+             nums[j]=0;
+            else
+                 if(j<(one+zero))
+                     nums[j]=1;
+                     else
+                     nums[j]=2;
+       }
+    }
+};
+
+
+//This question is solved by using three ponter technique for sorting the three colors accordingly.
